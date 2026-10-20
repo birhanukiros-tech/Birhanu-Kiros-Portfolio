@@ -1,9 +1,10 @@
+
+import { Link } from "react-router-dom";
 import profilePhoto from "../assets/Birhanu_Port.jpg";
 
 function Home() {
   return (
     <section
-      id="home"
       className="flex min-h-screen flex-col items-center gap-10 px-6 py-16 md:flex-row md:px-16"
     >
       {/* Left side: introduction */}
@@ -40,33 +41,36 @@ function Home() {
 
         {/* Navigation buttons */}
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
             View Projects
-          </a>
+          </Link>
 
-          <a
-            href="#journey"
+          <Link
+            to="/journey"
             className="rounded-lg border border-blue-600 px-5 py-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-50"
           >
             My Journey
-          </a>
+          </Link>
 
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="rounded-lg px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
           >
             Contact Me
-          </a>
+          </Link>
         </div>
       </div>
 
-      {/* Right side: your photo will go here */}
+      {/* Right side: profile photo */}
       <div className="flex w-full flex-1 items-center justify-center md:justify-end">
-        <img src={profilePhoto} alt="Birhanu Kiros Melku"
-        className= "aspect-square w-full max-w-sm rounded-2xl object-cover shadow-lg"/>
+        <img
+          src={profilePhoto}
+          alt="Birhanu Kiros Melku"
+          className="aspect-square w-full max-w-sm rounded-2xl object-cover shadow-lg"
+        />
       </div>
     </section>
   );
