@@ -1,7 +1,11 @@
-function App (){
-   return(
-    <div>
+import Home from "./sections/Home";
 
-    </div>
+function App() {
+   return(
+      <main>
+         <Home/>
+      </main>
    );
+
 }
+export default App;
