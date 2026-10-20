@@ -1,8 +1,9 @@
-import {
-  GraduationCap,
-  Code2,
-  Award,
-} from "lucide-react";
+import { GraduationCap, Code2, Award, ExternalLink } from "lucide-react";
+
+import annotationCertificate from "../assets/Birhan_kiros_annotation_certfcat.png";
+import digitalAucationCertificate from "../assets/Digtal Aucation Agent Certifcate.jpg";
+import hubspotCertificate from "../assets/Digtal marketing Certifcate from HubSpot.jpg";
+import californiaCertificate from "../assets/Digtal Marketing certifcate.jpg";
 
 function Education() {
   const education = [
@@ -12,14 +13,14 @@ function Education() {
       institution: "Aksum University",
       detail: "Graduated in February 2024",
       achievement: "GPA: 3.56",
+      certificate: "/certificates/Birhanu_Tempo.pdf",
     },
     {
       icon: Code2,
       title: "Full-Stack Software Development",
       institution: "IBT College, Canada",
       detail: "Software development training",
-      achievement:
-        "Learning HTML, CSS, JavaScript, React, and Next.js",
+      achievement: "Learning HTML, CSS, JavaScript, React, and Next.js",
     },
   ];
 
@@ -28,21 +29,52 @@ function Education() {
       title: "Digital Marketing and Business Practice",
       institution: "California Training Institution",
       detail: "Three-month training supported by Finn Church Aid",
+      certificate: californiaCertificate,
     },
     {
-      title: "Udacity",
-      institution: "Programming Fundamentals",
+      title: "Programming Fundamentals",
+      institution: "Udacity",
       detail: "Programming training",
+      certificate:
+        "/certificates/certificate_complation_of_programming_fundemenatls.pdf",
     },
     {
-      title: "HubSpot Academy",
-      institution: "Digital Marketing",
+      title: "Digital Marketing",
+      institution: "HubSpot Academy",
       detail: "Digital marketing training",
+      certificate: hubspotCertificate,
     },
     {
       title: "Aspire Leaders Program",
       institution: "2025",
       detail: "Leadership development program",
+      certificate:
+        "/certificates/birhanu_kiros_melku_alp_2025_certificate_of_completion.pdf",
+    },
+
+    {
+      title: "Digital Storytelling Workshop",
+      institution: "Future Fit Young Africa",
+      detail: "Digital storytelling workshop and story publication",
+      certificate: null,
+    },
+    {
+      title: "Mine Design using Gavia Surpac Software",
+      institution: "Udacit online Mining Software Training ",
+      detail: "Mine design using Gavia Surpac software",
+      certificate: "/certificates/mine design certificate.pdf",
+    },
+    {
+      title: "Digital Aucation Agent",
+      institution: "Auction Ethiopia S.C",
+      detail: "Digital Aucation Agent certificate",
+      certificate: digitalAucationCertificate,
+    },
+    {
+      title: "Data Annotation",
+      institution: "R&D Group",
+      detail: "Data annotation work",
+      certificate: annotationCertificate,
     },
   ];
 
@@ -61,9 +93,9 @@ function Education() {
           <div className="mt-5 h-1 w-16 rounded-full bg-blue-600" />
 
           <p className="mt-6 text-base leading-8 text-slate-600 md:text-lg dark:text-slate-300">
-            My education has given me an engineering foundation and
-            encouraged me to keep developing my skills in technology,
-            software development, and digital work.
+            My education has given me an engineering foundation and encouraged
+            me to keep developing my skills in technology, software development,
+            and digital work.
           </p>
         </div>
 
@@ -95,6 +127,18 @@ function Education() {
                 <p className="mt-2 leading-7 text-slate-700 dark:text-slate-200">
                   {item.achievement}
                 </p>
+
+                {item.certificate && (
+                  <a
+                    href={item.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:hover:text-blue-400"
+                  >
+                    View Degree Certificate
+                    <ExternalLink size={16} />
+                  </a>
+                )}
               </article>
             );
           })}
@@ -126,6 +170,18 @@ function Education() {
                 <p className="mt-2 leading-7 text-slate-600 dark:text-slate-300">
                   {item.detail}
                 </p>
+
+                {item.certificate && (
+                  <a
+                    href={item.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:hover:text-blue-400"
+                  >
+                    View Certificate
+                    <ExternalLink size={16} />
+                  </a>
+                )}
               </article>
             ))}
           </div>
