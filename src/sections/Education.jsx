@@ -1,3 +1,4 @@
+
 import { GraduationCap, Code2, Award, ExternalLink } from "lucide-react";
 
 import annotationCertificate from "../assets/Birhan_kiros_annotation_certfcat.png";
@@ -51,7 +52,6 @@ function Education() {
       certificate:
         "/certificates/birhanu_kiros_melku_alp_2025_certificate_of_completion.pdf",
     },
-
     {
       title: "Digital Storytelling Workshop",
       institution: "Future Fit Young Africa",
@@ -79,20 +79,20 @@ function Education() {
   ];
 
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-20 md:px-16 md:py-28 dark:bg-slate-950">
+    <section className="min-h-screen bg-slate-50 px-6 py-20 transition-colors duration-200 dark:bg-slate-950 md:px-16 md:py-28">
       <div className="mx-auto max-w-5xl">
         <div className="mb-12 max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             Learning and Growth
           </p>
 
-          <h1 className="font-['Georgia',serif] text-4xl font-bold leading-tight text-slate-900 md:text-5xl dark:text-white">
+          <h1 className="font-['Georgia',serif] text-4xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl">
             Educational Background
           </h1>
 
-          <div className="mt-5 h-1 w-16 rounded-full bg-blue-600" />
+          <div className="mt-5 h-1 w-16 rounded-full bg-blue-600 dark:bg-blue-400" />
 
-          <p className="mt-6 text-base leading-8 text-slate-600 md:text-lg dark:text-slate-300">
+          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
             My education has given me an engineering foundation and encouraged
             me to keep developing my skills in technology, software development,
             and digital work.
@@ -106,9 +106,9 @@ function Education() {
             return (
               <article
                 key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
                   <Icon size={25} />
                 </div>
 
@@ -116,7 +116,7 @@ function Education() {
                   {item.title}
                 </h2>
 
-                <p className="mt-2 font-semibold text-blue-600">
+                <p className="mt-2 font-semibold text-blue-600 dark:text-blue-400">
                   {item.institution}
                 </p>
 
@@ -124,16 +124,18 @@ function Education() {
                   {item.detail}
                 </p>
 
-                <p className="mt-2 leading-7 text-slate-700 dark:text-slate-200">
-                  {item.achievement}
-                </p>
+                {item.achievement && (
+                  <p className="mt-2 leading-7 text-slate-700 dark:text-slate-300">
+                    {item.achievement}
+                  </p>
+                )}
 
                 {item.certificate && (
                   <a
                     href={item.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:hover:text-blue-400"
+                    className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-white"
                   >
                     View Degree Certificate
                     <ExternalLink size={16} />
@@ -146,9 +148,9 @@ function Education() {
 
         <div className="mt-16">
           <div className="mb-7 flex items-center gap-3">
-            <Award className="text-blue-600" size={27} />
+            <Award className="text-blue-600 dark:text-blue-400" size={27} />
 
-            <h2 className="font-['Georgia',serif] text-2xl font-bold text-slate-900 md:text-3xl dark:text-white">
+            <h2 className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white md:text-3xl">
               Training and Certificates
             </h2>
           </div>
@@ -157,13 +159,13 @@ function Education() {
             {training.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-blue-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                className="rounded-xl border border-slate-200 bg-white p-6 transition duration-200 hover:border-blue-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
               >
                 <h3 className="font-semibold leading-7 text-slate-900 dark:text-white">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 font-medium text-blue-600">
+                <p className="mt-2 font-medium text-blue-600 dark:text-blue-400">
                   {item.institution}
                 </p>
 
@@ -176,7 +178,7 @@ function Education() {
                     href={item.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:hover:text-blue-400"
+                    className="mt-4 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-white"
                   >
                     View Certificate
                     <ExternalLink size={16} />

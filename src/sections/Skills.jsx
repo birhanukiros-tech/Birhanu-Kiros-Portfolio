@@ -1,3 +1,4 @@
+
 import {
   Code2,
   Database,
@@ -75,19 +76,22 @@ const skillGroups = [
 
 function Skills() {
   return (
-    <section className="min-h-screen bg-white px-6 py-16 font-[Georgia] sm:py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-16 font-[Georgia] transition-colors duration-200 dark:bg-slate-950 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:bg-slate-900 dark:text-blue-400">
             <Monitor size={16} />
             My Skills
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-            Skills & <span className="text-blue-600">Expertise</span>
+          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
+            Skills &{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              Expertise
+            </span>
           </h1>
 
-          <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
             My background combines web development, digital marketing,
             data-related work, and professional experience. I continue
             developing these skills through practical projects and learning.
@@ -101,19 +105,19 @@ function Skills() {
             return (
               <article
                 key={group.title}
-                className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8"
+                className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 sm:p-8"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
                     <Icon size={24} />
                   </div>
 
                   <div>
-                    <h2 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                       {group.title}
                     </h2>
 
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                    <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                       {group.description}
                     </p>
                   </div>
@@ -123,7 +127,7 @@ function Skills() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-lg border border-blue-100 bg-blue-50/70 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-100 hover:text-blue-700"
+                      className="rounded-lg border border-blue-100 bg-blue-50/70 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:bg-slate-700 dark:hover:text-blue-300"
                     >
                       {skill}
                     </span>
@@ -139,7 +143,7 @@ function Skills() {
             Always Learning, Always Growing
           </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl leading-7 text-slate-300">
+          <p className="mx-auto mt-3 max-w-2xl leading-7 text-white/90">
             I believe that continuous learning, practical experience, and
             collaboration are essential to professional growth. I am eager to
             apply my skills while developing new ones.

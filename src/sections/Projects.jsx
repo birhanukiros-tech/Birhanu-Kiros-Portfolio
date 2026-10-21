@@ -1,5 +1,5 @@
 
-import { ExternalLink, ArrowUpRight, Code2, } from "lucide-react";
+import { ExternalLink, ArrowUpRight, Code2 } from "lucide-react";
 import htmlProjectImage from "../assets/addis_eats_html.png";
 import reactProjectImage from "../assets/addis_eats_react.png";
 import nextProjectImage from "../assets/addis_eats_next.png";
@@ -45,20 +45,22 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="min-h-screen bg-white px-6 py-16 font-[Georgia] sm:py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-16 font-[Georgia] transition-colors duration-200 dark:bg-slate-950 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:bg-slate-900 dark:text-blue-400">
             <Code2 size={16} />
             My Work
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
             Projects That Turn
-            <span className="block text-blue-600">Ideas Into Reality</span>
+            <span className="block text-blue-600 dark:text-blue-400">
+              Ideas Into Reality
+            </span>
           </h1>
 
-          <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
             These projects reflect my journey from core frontend development to
             React and Next.js. Each version represents what I have learned by
             building, testing, and improving real applications.
@@ -69,9 +71,9 @@ function Projects() {
           {projects.map((project) => (
             <article
               key={project.version}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
             >
-              <div className="relative h-48 overflow-hidden bg-slate-100">
+              <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-slate-800">
                 <img
                   src={project.image}
                   alt={`${project.title} ${project.category} website screenshot`}
@@ -85,7 +87,7 @@ function Projects() {
                   rel="noopener noreferrer"
                   aria-label={`Open ${project.versionLabel} live demo`}
                   title={`Open ${project.versionLabel} live demo`}
-                  className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/95 px-3 py-2 text-xs font-semibold text-blue-700 shadow-sm transition hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/95 px-3 py-2 text-xs font-semibold text-blue-700 shadow-sm transition hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-slate-700 dark:focus:ring-offset-slate-900"
                 >
                   {project.versionLabel}
                   <ExternalLink size={13} />
@@ -93,11 +95,11 @@ function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   Addis Eats — {project.category}
                 </h3>
 
-                <p className="mt-3 min-h-28 flex-1 text-sm leading-7 text-slate-600">
+                <p className="mt-3 min-h-28 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">
                   {project.description}
                 </p>
 
@@ -105,19 +107,19 @@ function Projects() {
                   {project.technologies.map((technology) => (
                     <span
                       key={technology}
-                      className="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-medium text-blue-700"
+                      className="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-medium text-blue-700 dark:bg-slate-800 dark:text-blue-300"
                     >
                       {technology}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-5">
+                <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-5 dark:border-slate-800">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus:ring-offset-slate-900"
                   >
                     Live Demo
                     <ExternalLink size={16} />
@@ -127,7 +129,7 @@ function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 dark:focus:ring-offset-slate-900"
                   >
                     <Code2 size={17} />
                     GitHub
@@ -143,7 +145,7 @@ function Projects() {
             Every Project Is a Step Forward
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/90">
             I believe in learning by building, improving through feedback, and
             using technology to solve practical problems. I look forward to
             creating more useful digital experiences.
@@ -151,7 +153,7 @@ function Projects() {
 
           <a
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
           >
             Let&apos;s Connect
             <ArrowUpRight size={18} />

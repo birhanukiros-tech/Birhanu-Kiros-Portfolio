@@ -1,3 +1,4 @@
+
 import {
   BriefcaseBusiness,
   Users,
@@ -102,28 +103,28 @@ function ExperienceCard({ experience, volunteer = false }) {
   const Icon = volunteer ? Users : experience.icon;
 
   return (
-    <article className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <article className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-900">
       <div className="mb-5 flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
           <Icon size={23} />
         </div>
 
         <div className="min-w-0">
-          <p className="mb-1 text-sm font-semibold text-blue-600">
+          <p className="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400">
             {experience.category || "Community Involvement"}
           </p>
 
-          <h3 className="text-xl font-bold leading-snug text-slate-900">
+          <h3 className="text-xl font-bold leading-snug text-slate-900 dark:text-white">
             {experience.role}
           </h3>
 
-          <p className="mt-1 font-medium text-slate-600">
+          <p className="mt-1 font-medium text-slate-600 dark:text-slate-300">
             {experience.organization}
           </p>
         </div>
       </div>
 
-      <div className="mb-4 space-y-2 text-sm text-slate-500">
+      <div className="mb-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
         {experience.period && (
           <p className="flex items-center gap-2">
             <CalendarDays size={15} />
@@ -140,7 +141,7 @@ function ExperienceCard({ experience, volunteer = false }) {
         {experience.responsibilities.map((responsibility) => (
           <li
             key={responsibility}
-            className="flex items-start gap-3 text-sm leading-6 text-slate-600"
+            className="flex items-start gap-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
           >
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
             <span>{responsibility}</span>
@@ -153,22 +154,22 @@ function ExperienceCard({ experience, volunteer = false }) {
 
 function Experience() {
   return (
-    <section className="min-h-screen bg-white px-6 py-16 font-[Georgia] sm:py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-16 font-[Georgia] transition-colors duration-200 dark:bg-slate-950 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:bg-slate-900 dark:text-blue-400">
             <BriefcaseBusiness size={16} />
             My Experience
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
             Experience That Shapes
-            <span className="block text-blue-600">
+            <span className="block text-blue-600 dark:text-blue-400">
               My Professional Growth
             </span>
           </h1>
 
-          <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
             My experience combines mining engineering, digital marketing,
             data annotation, and community involvement. Each opportunity has
             helped me build practical skills, work with others, and continue
@@ -178,10 +179,10 @@ function Experience() {
 
         <div className="mb-16">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
               Professional Experience
             </h2>
-            <p className="mt-3 leading-7 text-slate-600">
+            <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
               Practical experience across engineering, digital marketing,
               and data-related work.
             </p>
@@ -199,10 +200,10 @@ function Experience() {
 
         <div>
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
               Volunteering & Community Activities
             </h2>
-            <p className="mt-3 leading-7 text-slate-600">
+            <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
               Experiences that strengthened my communication, teamwork,
               adaptability, and community engagement.
             </p>
@@ -226,7 +227,7 @@ function Experience() {
             Committed to Growth, Inspired by Learning
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/90">
             I bring curiosity, responsibility, and a willingness to learn to
             every opportunity. I am ready to build on my experience while
             contributing to meaningful projects and collaborative teams.
@@ -236,7 +237,7 @@ function Experience() {
         <div className="mt-8 text-center">
           <a
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
           >
             Explore My Projects
             <ArrowUpRight size={18} />

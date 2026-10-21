@@ -34,7 +34,7 @@ const contactMethods = [
     description: "Connect with me professionally.",
     href: "https://www.linkedin.com/in/birhanukirosmelku",
     label: "Visit LinkedIn",
-    icon:  ExternalLink,
+    icon: ExternalLink,
     external: true,
   },
   {
@@ -50,20 +50,22 @@ const contactMethods = [
 
 function Contact() {
   return (
-    <section className="min-h-screen bg-white px-6 py-16 font-[Georgia] sm:py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-16 font-[Georgia] transition-colors duration-200 dark:bg-slate-950 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:bg-slate-900 dark:text-blue-400">
             <Mail size={16} />
             Get in Touch
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
             Let's Start a
-            <span className="block text-blue-600">Conversation</span>
+            <span className="block text-blue-600 dark:text-blue-400">
+              Conversation
+            </span>
           </h1>
 
-          <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
             I'm open to opportunities in software development, digital
             marketing, and other digital fields. If you have an opportunity,
             project, or idea to discuss, I'd be happy to hear from you.
@@ -77,23 +79,23 @@ function Contact() {
             return (
               <article
                 key={method.title}
-                className="group flex flex-col rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8"
+                className="group flex flex-col rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 sm:p-8"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white dark:bg-slate-800 dark:text-blue-400">
                     <Icon size={23} />
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                       {method.title}
                     </h2>
 
-                    <p className="mt-2 break-words text-base font-semibold text-blue-700">
+                    <p className="mt-2 break-words text-base font-semibold text-blue-700 dark:text-blue-400">
                       {method.detail}
                     </p>
 
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                    <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                       {method.description}
                     </p>
                   </div>
@@ -102,12 +104,8 @@ function Contact() {
                 <a
                   href={method.href}
                   target={method.external ? "_blank" : undefined}
-                  rel={
-                    method.external
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-blue-200 px-4 py-2.5 text-sm font-semibold text-blue-700 transition hover:border-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  rel={method.external ? "noopener noreferrer" : undefined}
+                  className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-blue-200 px-4 py-2.5 text-sm font-semibold text-blue-700 transition hover:border-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-slate-700 dark:text-blue-400 dark:hover:border-blue-400 dark:hover:bg-slate-800 dark:focus:ring-offset-slate-900"
                 >
                   {method.label}
                   <ArrowUpRight size={16} />
@@ -117,21 +115,21 @@ function Contact() {
           })}
         </div>
 
-        <div className="mt-8 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/60 p-6 sm:p-8">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-blue-600 shadow-sm">
+        <div className="mt-8 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/60 p-6 dark:border-slate-800 dark:bg-slate-900 sm:p-8">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-blue-600 shadow-sm dark:bg-slate-800 dark:text-blue-400">
             <MapPin size={23} />
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-slate-900">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
               Location
             </h2>
 
-            <p className="mt-2 font-semibold text-blue-700">
+            <p className="mt-2 font-semibold text-blue-700 dark:text-blue-400">
               Addis Ababa, Ethiopia
             </p>
 
-            <p className="mt-2 text-sm leading-6 text-slate-600">
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
               Available for professional connections and suitable
               opportunities.
             </p>
