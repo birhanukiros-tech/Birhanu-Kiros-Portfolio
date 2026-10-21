@@ -7,6 +7,7 @@ import {
   Database,
   CalendarDays,
   ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 
 const professionalExperience = [
@@ -103,41 +104,48 @@ function ExperienceCard({ experience, volunteer = false }) {
   const Icon = volunteer ? Users : experience.icon;
 
   return (
-    <article className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-900">
-      <div className="mb-5 flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
-          <Icon size={23} />
+    <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700 sm:p-6">
+      <div className="mb-4 flex items-start gap-3">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
+          <Icon size={22} />
         </div>
 
-        <div className="min-w-0">
-          <p className="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400">
+        <div className="min-w-0 flex-1">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
             {experience.category || "Community Involvement"}
           </p>
 
-          <h3 className="text-xl font-bold leading-snug text-slate-900 dark:text-white">
+          <h3 className="font-['Georgia',serif] text-lg font-bold leading-snug text-slate-900 dark:text-white sm:text-xl">
             {experience.role}
           </h3>
 
-          <p className="mt-1 font-medium text-slate-600 dark:text-slate-300">
+          <p className="mt-1 font-medium leading-6 text-slate-600 dark:text-slate-300">
             {experience.organization}
           </p>
         </div>
       </div>
 
-      <div className="mb-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
-        {experience.period && (
-          <p className="flex items-center gap-2">
-            <CalendarDays size={15} />
-            {experience.period}
-          </p>
-        )}
+      {(experience.period || experience.location || experience.detail) && (
+        <div className="mb-4 space-y-2 border-b border-slate-100 pb-4 text-sm leading-6 text-slate-500 dark:border-slate-800 dark:text-slate-400">
+          {experience.period && (
+            <p className="flex items-start gap-2">
+              <CalendarDays className="mt-1 shrink-0" size={15} />
+              <span>{experience.period}</span>
+            </p>
+          )}
 
-        {experience.location && <p>{experience.location}</p>}
+          {experience.location && (
+            <p className="flex items-start gap-2">
+              <MapPin className="mt-1 shrink-0" size={15} />
+              <span>{experience.location}</span>
+            </p>
+          )}
 
-        {experience.detail && <p>{experience.detail}</p>}
-      </div>
+          {experience.detail && <p>{experience.detail}</p>}
+        </div>
+      )}
 
-      <ul className="space-y-3">
+      <ul className="space-y-2.5">
         {experience.responsibilities.map((responsibility) => (
           <li
             key={responsibility}
@@ -154,41 +162,46 @@ function ExperienceCard({ experience, volunteer = false }) {
 
 function Experience() {
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-16 font-[Georgia] transition-colors duration-200 dark:bg-slate-950 sm:py-20">
+    <section className="min-h-screen bg-slate-50 px-5 pb-14 pt-8 transition-colors duration-200 dark:bg-slate-950 sm:px-8 sm:pt-10 md:px-12 md:pb-16 md:pt-12 lg:px-16">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:bg-slate-900 dark:text-blue-400">
+        <header className="mb-10 max-w-4xl sm:mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3.5 py-2 text-sm font-semibold text-blue-700 dark:border-slate-800 dark:bg-slate-900 dark:text-blue-400">
             <BriefcaseBusiness size={16} />
             My Experience
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
+          <h1 className="mt-4 font-['Georgia',serif] text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl">
             Experience That Shapes
-            <span className="block text-blue-600 dark:text-blue-400">
+            <span className="mt-1 block text-blue-600 dark:text-blue-400">
               My Professional Growth
             </span>
           </h1>
 
-          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+          <div className="mt-4 h-1 w-16 rounded-full bg-blue-600 dark:bg-blue-400" />
+
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:mt-5 sm:text-lg sm:leading-8">
             My experience combines mining engineering, digital marketing,
             data annotation, and community involvement. Each opportunity has
             helped me build practical skills, work with others, and continue
             growing professionally.
           </p>
-        </div>
+        </header>
 
-        <div className="mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+        <section aria-labelledby="professional-heading" className="mb-12 sm:mb-14">
+          <div className="mb-6">
+            <h2
+              id="professional-heading"
+              className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl"
+            >
               Professional Experience
             </h2>
-            <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
+            <p className="mt-2 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">
               Practical experience across engineering, digital marketing,
               and data-related work.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {professionalExperience.map((experience) => (
               <ExperienceCard
                 key={experience.organization}
@@ -196,20 +209,23 @@ function Experience() {
               />
             ))}
           </div>
-        </div>
+        </section>
 
-        <div>
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
-              Volunteering & Community Activities
+        <section aria-labelledby="volunteering-heading">
+          <div className="mb-6">
+            <h2
+              id="volunteering-heading"
+              className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl"
+            >
+              Volunteering &amp; Community Activities
             </h2>
-            <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
+            <p className="mt-2 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">
               Experiences that strengthened my communication, teamwork,
               adaptability, and community engagement.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-4 sm:gap-5 md:grid-cols-2">
             {volunteerExperience.map((experience) => (
               <ExperienceCard
                 key={experience.organization}
@@ -218,31 +234,33 @@ function Experience() {
               />
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="mt-16 rounded-2xl bg-[#e99230] px-6 py-10 text-center text-white sm:px-10">
-          <CalendarDays className="mx-auto mb-4 text-blue-300" size={30} />
+        <section className="mt-12 rounded-2xl border border-blue-100 bg-[#e99230] p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:mt-14 sm:p-9">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
+              <CalendarDays size={25} />
+            </div>
 
-          <h2 className="text-2xl font-bold">
-            Committed to Growth, Inspired by Learning
-          </h2>
+            <h2 className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+              Committed to Growth, Inspired by Learning
+            </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/90">
-            I bring curiosity, responsibility, and a willingness to learn to
-            every opportunity. I am ready to build on my experience while
-            contributing to meaningful projects and collaborative teams.
-          </p>
-        </div>
+            <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
+              I bring curiosity, responsibility, and a willingness to learn to
+              every opportunity. I am ready to build on my experience while
+              contributing to meaningful projects and collaborative teams.
+            </p>
 
-        <div className="mt-8 text-center">
-          <a
-            href="/projects"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
-          >
-            Explore My Projects
-            <ArrowUpRight size={18} />
-          </a>
-        </div>
+            <a
+              href="/projects"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:outline-blue-400"
+            >
+              Explore My Projects
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </section>
       </div>
     </section>
   );

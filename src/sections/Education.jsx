@@ -79,40 +79,42 @@ function Education() {
   ];
 
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-20 transition-colors duration-200 dark:bg-slate-950 md:px-16 md:py-28">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-12 max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+    <section className="min-h-screen bg-slate-50 px-5 pb-14 pt-8 transition-colors duration-200 dark:bg-slate-950 sm:px-8 sm:pt-10 md:px-12 md:pb-16 md:pt-12 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        {/* Page heading */}
+        <div className="mb-9 max-w-4xl sm:mb-10">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             Learning and Growth
           </p>
 
-          <h1 className="font-['Georgia',serif] text-4xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl">
+          <h1 className="font-['Georgia',serif] text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl">
             Educational Background
           </h1>
 
-          <div className="mt-5 h-1 w-16 rounded-full bg-blue-600 dark:bg-blue-400" />
+          <div className="mt-4 h-1 w-16 rounded-full bg-blue-600 dark:bg-blue-400" />
 
-          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:mt-5 sm:text-lg sm:leading-8">
             My education has given me an engineering foundation and encouraged
             me to keep developing my skills in technology, software development,
             and digital work.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        {/* Main education */}
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
           {education.map((item) => {
             const Icon = item.icon;
 
             return (
               <article
                 key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700 sm:p-7"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-slate-800 dark:text-blue-400">
                   <Icon size={25} />
                 </div>
 
-                <h2 className="font-['Georgia',serif] text-xl font-bold text-slate-900 dark:text-white">
+                <h2 className="font-['Georgia',serif] text-xl font-bold leading-snug text-slate-900 dark:text-white sm:text-2xl">
                   {item.title}
                 </h2>
 
@@ -135,7 +137,7 @@ function Education() {
                     href={item.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-white"
+                    className="mt-5 inline-flex items-center gap-2 rounded-sm font-semibold text-blue-600 transition hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 dark:text-blue-400 dark:hover:text-white dark:focus-visible:outline-blue-400"
                   >
                     View Degree Certificate
                     <ExternalLink size={16} />
@@ -146,20 +148,21 @@ function Education() {
           })}
         </div>
 
-        <div className="mt-16">
-          <div className="mb-7 flex items-center gap-3">
-            <Award className="text-blue-600 dark:text-blue-400" size={27} />
+        {/* Training and certificates */}
+        <div className="mt-12 sm:mt-14">
+          <div className="mb-6 flex items-center gap-3 sm:mb-7">
+            <Award className="shrink-0 text-blue-600 dark:text-blue-400" size={27} />
 
-            <h2 className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white md:text-3xl">
+            <h2 className="font-['Georgia',serif] text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
               Training and Certificates
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {training.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-slate-200 bg-white p-6 transition duration-200 hover:border-blue-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700 sm:p-6"
               >
                 <h3 className="font-semibold leading-7 text-slate-900 dark:text-white">
                   {item.title}
@@ -178,7 +181,7 @@ function Education() {
                     href={item.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-white"
+                    className="mt-4 inline-flex items-center gap-2 rounded-sm font-semibold text-blue-600 transition hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 dark:text-blue-400 dark:hover:text-white dark:focus-visible:outline-blue-400"
                   >
                     View Certificate
                     <ExternalLink size={16} />
