@@ -8,7 +8,7 @@ import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
-
+import Contact from "./sections/Contact";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects/>} />
           <Route path="/skills" element={<Skills/>} />
+          <Route path="/contact" element={<Contact />} />
 
         </Routes>
       </main>
