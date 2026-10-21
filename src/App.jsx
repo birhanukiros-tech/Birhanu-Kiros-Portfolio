@@ -7,6 +7,7 @@ import Journey from "./sections/Journey";
 import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import Skills from "./sections/Skills";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects/>} />
+          <Route path="/skills" element={<Skills/>} />
 
         </Routes>
       </main>

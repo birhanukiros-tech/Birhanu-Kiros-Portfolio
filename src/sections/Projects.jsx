@@ -138,7 +138,7 @@ function Projects() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl bg-slate-900 px-6 py-10 text-center text-white sm:px-10">
+        <div className="mt-16 rounded-2xl bg-[#e99230] px-6 py-10 text-center text-white sm:px-10">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Every Project Is a Step Forward
           </h2>

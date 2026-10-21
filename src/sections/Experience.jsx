@@ -219,11 +219,11 @@ function Experience() {
           </div>
         </div>
 
-        <div className="mt-16 rounded-2xl bg-slate-900 px-6 py-10 text-center text-white sm:px-10">
+        <div className="mt-16 rounded-2xl bg-[#e99230] px-6 py-10 text-center text-white sm:px-10">
           <CalendarDays className="mx-auto mb-4 text-blue-300" size={30} />
 
           <h2 className="text-2xl font-bold">
-            Always Learning, Always Growing
+            Committed to Growth, Inspired by Learning
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-300">
