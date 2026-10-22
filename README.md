@@ -1,16 +1,116 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Birhanu Kiros Melku — Personal Portfolio
 
-Currently, two official plugins are available:
+Welcome to my personal portfolio! I am a Mining Engineering graduate and aspiring full-stack developer with interests in software development, digital marketing, content creation, and technology-driven projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This portfolio showcases my background, skills, professional experience, projects, and continuous learning journey.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌐 **Visit my portfolio:**  
+https://birhanu-kiros-portfolio.vercel.app/
 
-## Expanding the ESLint configuration
+## About the Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This responsive portfolio website presents my professional profile and provides easy access to my projects, education, experience, skills, and contact information.
+
+## Features
+
+- Responsive design for desktop and mobile devices
+- Light and dark themes
+- Home page and personal journey
+- Educational background and certificates
+- Professional experience and activities
+- Project demonstrations and source-code links
+- Skills and contact information
+- Downloadable CV
+- Navigation with React Router
+
+## Technologies Used
+
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide React
+- JavaScript
+- HTML5 and CSS3
+- Vercel for deployment
+
+## Projects Featured
+
+### Addis Eats — HTML
+A restaurant website showcasing Ethiopian food and restaurant content.
+
+- [Live Demo](https://addis-eats-html.vercel.app/index.html)
+- [GitHub Repository](https://github.com/birhanukiros-tech/addis-eats-html)
+
+### Addis Eats — React
+A restaurant website built with React and reusable components.
+
+- [Live Demo](https://addis-eats-react-seven.vercel.app/)
+- [GitHub Repository](https://github.com/birhanukiros-tech/addis-eats-react)
+
+### Addis Eats — Next.js
+A restaurant website developed using Next.js.
+
+- [Live Demo](https://addis-eats-nextjs-o13s.vercel.app/)
+- [GitHub Repository](https://github.com/birhanukiros-tech/addis-eats-nextjs)
+
+## Run Locally
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/birhanukiros-tech/Birhanu-Kiros-Portfolio.git
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd Birhanu-Kiros-Portfolio
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL shown in your terminal.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## Connect With Me
+
+- **GitHub:** https://github.com/birhanukiros-tech
+- **LinkedIn:** https://www.linkedin.com/in/birhanukirosmelku
+- **Email:** brightzbrave@gmail.com
+- **Portfolio:** https://birhanu-kiros-portfolio.vercel.app/
+
+## Author
+
+**Birhanu Kiros Melku**  
+Addis Ababa, Ethiopia
+
+---
+
+Thank you for visiting my portfolio!
