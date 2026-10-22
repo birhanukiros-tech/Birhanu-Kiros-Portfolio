@@ -1,4 +1,3 @@
-
 import {
   Mail,
   Code2,
@@ -38,13 +37,22 @@ const contactMethods = [
     external: true,
   },
   {
-    title: "Phone / WhatsApp",
+    title: "Phone",
     detail: "+251 973 176 620",
-    description: "Reach me by phone or message me on WhatsApp.",
+    description: "Call me directly from a device that supports phone links.",
     href: "tel:+251973176620",
     label: "Call me",
     icon: Phone,
     external: false,
+  },
+  {
+    title: "WhatsApp",
+    detail: "+251 973 176 620",
+    description: "Send me a message on WhatsApp.",
+    href: "https://wa.me/251973176620",
+    label: "Message on WhatsApp",
+    icon: MessageCircle,
+    external: true,
   },
 ];
 

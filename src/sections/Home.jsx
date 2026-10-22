@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import profilePhoto from "../assets/Birhanu_Port.jpg";
 
@@ -12,7 +11,7 @@ function Home() {
         </p>
 
         <p className="mt-2 text-base text-slate-600 dark:text-slate-300 sm:text-lg">
-          Junior Full-Stack Developer &amp; Digital Professional
+          Junior Full-Stack Developer & Digital Professional
         </p>
 
         <h1 className="mt-4 text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
@@ -37,7 +36,7 @@ function Home() {
           continue growing professionally.
         </p>
 
-        {/* Navigation buttons */}
+        {/* Navigation and CV buttons */}
         <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
           <Link
             to="/projects"
@@ -59,6 +58,14 @@ function Home() {
           >
             Contact Me
           </Link>
+
+          <a
+            href="/certificates/Birhanu_Kiros_Software_CV.pdf"
+            download="Birhanu_Kiros_Software_CV.pdf"
+            className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-900"
+          >
+            Download CV
+          </a>
         </div>
       </div>
 

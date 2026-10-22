@@ -37,7 +37,7 @@ function Education() {
       institution: "Udacity",
       detail: "Programming training",
       certificate:
-        "/certificates/certificate_complation_of_programming_fundemenatls.pdf",
+        "/certificates/certificate _complation _of_ programming _fundemenatls.pdf",
     },
     {
       title: "Digital Marketing",
