@@ -25,8 +25,8 @@ function Education() {
     {
       icon: Code2,
       title: "Full-Stack Software Development",
-      institution: "IBT College, Canada",
-      detail: "Software development training",
+      institution: "IBT College of Canada",
+      detail: "Full- Stack Software development training",
       achievement: "Learning HTML, CSS, JavaScript, React, and Next.js",
     },
   ];
