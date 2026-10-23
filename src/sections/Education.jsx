@@ -33,17 +33,18 @@ function Education() {
 
   const training = [
     {
-      title: "Digital Marketing and Business Practice",
-      institution: "California Training Institution",
-      detail: "Three-month training supported by Finn Church Aid",
-      certificate: californiaCertificate,
-    },
-    {
       title: "Programming Fundamentals",
       institution: "Udacity",
       detail: "Programming training",
       certificate:
         "/certificates/certificate _complation _of_ programming _fundemenatls.pdf",
+    },
+    
+    {
+      title: "Digital Marketing and Business Practice",
+      institution: "California Training Institution",
+      detail: "Three-month training supported by Finn Church Aid",
+      certificate: californiaCertificate,
     },
     {
       title: "Digital Marketing",
